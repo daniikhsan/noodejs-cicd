@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI
 
 on:
   push:
@@ -7,17 +7,27 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js 14
+    - name: Installing Node.js 14
       uses: actions/setup-node@v3
       with:
         node-version: 14
         cache: 'npm'
 
+    - name: Install depedencies
     - run: npm install
+
+    - name: Testing...
     - run: npm test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - name: 
