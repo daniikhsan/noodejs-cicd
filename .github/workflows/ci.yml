@@ -24,10 +24,3 @@ jobs:
 
     - name: Testing...
     - run: npm test
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps:
-    - name: 
