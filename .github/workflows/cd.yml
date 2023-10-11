@@ -25,4 +25,3 @@ jobs:
             cd /home/test/noodejs-cicd
             git pull origin master
             npm install
-            pm2 start src/index.js
