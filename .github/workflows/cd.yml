@@ -22,3 +22,6 @@ jobs:
           script: | 
             cd /home/test/noodejs-cicd
             git pull origin master
+
+      - name: Installing Depedencies...
+        uses: npm install
