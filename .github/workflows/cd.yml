@@ -20,8 +20,8 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: | 
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             cd /home/test/noodejs-cicd
             git pull origin master
-
-      - name: Installing Depedencies...
-        run: npm install
+            npm install
