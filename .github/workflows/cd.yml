@@ -22,4 +22,3 @@ jobs:
           script: | 
             cd /home/test/noodejs-cicd
             git pull origin master
-            npm install
