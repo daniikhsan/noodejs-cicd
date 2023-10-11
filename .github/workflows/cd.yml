@@ -24,4 +24,4 @@ jobs:
             git pull origin master
 
       - name: Installing Depedencies...
-        uses: npm install
+        run: npm install
